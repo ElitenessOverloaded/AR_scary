@@ -1,0 +1,56 @@
+<html>
+  
+       <!-- include A-Frame obviously -->
+<script src="aframe.min.js"></script>
+<!-- include ar.js for A-Frame -->
+<script src="aframe-ar.js"></script>
+    <script src="aframe-animation-component.min.js"></script>
+    <script src="aframe-particle-system-component.min.js"></script>
+    
+<body style='margin : 0px; overflow: hidden;'>
+  <a-scene embedded arjs>
+    
+      
+    <a-assets>
+        <a-asset-item id="skeleton" src="models/skeleton/sscene.gltf"></a-asset-item>
+        <a-asset-item id="couples" src="models/couple_in_love/cscene.gltf"></a-asset-item>
+        <a-asset-item id="flower" src="models/flower_3d_model/fscene.gltf"></a-asset-item>
+        <a-asset-item id="dog" src="models/my_dog_sookie_sleeping/scene.gltf"></a-asset-item>
+        <a-asset-item id="skull" src="models/skull_downloadable/scene.gltf"></a-asset-item>
+        <a-asset-item id="snake" src="models/snake/sscene.gltf"></a-asset-item>
+          
+    </a-assets>
+      
+      <a-marker type='pattern' preset='hiro'>
+         <a-entity particle-system="preset: rain; color:red; particleCount: 50000" position="0 1 -2" rotation="270 90 270"></a-entity>
+      </a-marker>   
+      
+    <a-marker type='pattern' url='marker/mark1.patt'>
+        <a-entity gltf-model="#skeleton" position="0 1 -2" rotation="270 90 270" scale="0.9 0.9 0.9"></a-entity>
+        <a-entity particle-system="preset: snow; color:red; particleCount: 10000" position="0 1 -2" rotation="270 90 270"></a-entity>
+
+      </a-marker>
+      
+    <a-marker type='pattern' url='marker/mark2.patt'>
+        <a-box width="12" height="6" depth="0.1" position="0 1 -2" rotation="270 0 0" src="models/video.mp4"></a-box>
+        <a-entity particle-system="preset: snow; color:red; particleCount: 10000" position="0 1 -2" rotation="270 90 270"></a-entity>
+      </a-marker>
+      
+    <a-marker type='pattern' url='marker/mark3.patt'>
+          <a-entity gltf-model="#flower" position="0 -1 -2" scale="0.1 0.1 0.1"></a-entity>
+        <a-entity particle-system="preset: snow; color:red; particleCount: 10000" position="0 1 -2" rotation="270 90 270"></a-entity>
+      </a-marker>
+      
+    <a-marker type='pattern' url='marker/mark4.patt'>
+        <a-entity gltf-model="#skull" position="0 1 -2" scale="0.9 0.9 0.9" rotation="270 90 270"></a-entity>
+        <a-entity particle-system="preset: snow; color:red; particleCount: 10000" position="0 1 -2" rotation="270 90 270"></a-entity>
+      </a-marker>
+      
+    <a-marker type='pattern' url='marker/mark5.patt'>
+        <a-entity gltf-model="#snake" position="0 1 -2" scale="0.1 0.1 0.1"></a-entity>
+        <a-entity particle-system="preset: snow; color:red; particleCount: 10000" position="0 1 -2"></a-entity>
+      </a-marker>
+      
+  </a-scene>
+</body>
+</html>
